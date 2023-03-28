@@ -1,0 +1,15 @@
+load fisheriris
+D = meas;
+%% Use the 'pca' function to find D_pca
+[eigvects,D_pca,eigvals] = pca(D);
+%% Define the x and y coordinates of the first two dimensions of the data in the PCA vector space, D_pca_x and D_pca_y
+D_pca_x = D_pca(:,1);
+D_pca_y = D_pca(:,2);
+% scatter plot the data with asterisks '*'
+plot(D_pca_x,D_pca_y,'*')
+% Define x and y coordinates for the shape of the PCA ellipsoid in just the first two dimensions, which is a standard ellipse, as ellipse_x and ellipse_y.
+theta = 2*pi*[0:100]/100;
+ellipse_x = 2*sqrt(eigvals(1))*cos(theta);
+ellipse_y = 2*sqrt(eigvals(2))*sin(theta);
+%Use axis equal to correct aspect ratio
+axis equal
