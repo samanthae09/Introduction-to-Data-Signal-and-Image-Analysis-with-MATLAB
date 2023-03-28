@@ -1,6 +1,6 @@
 %% Function
 function imgresample = ImageResample(img, dim)
-% define r,c,nr,nc
+% define rows, columns,number of rows, number of columns
 nr = dim(1);
 nc = dim(2);
 [r, c] = size(img);
