@@ -1,0 +1,12 @@
+load humanactivity.mat
+D = feat;
+
+%% Compute eigvals using the 'pca' function
+[eigvects,~,eigvals] = pca(D);
+
+%% Define vector cumulative_percent_variance_permode 
+pvar = 100*eigvals/sum(eigvals);
+cumulative_percent_variance_permode = cumsum(pvar);
+
+% Define N as the number of eigenvectors needed to capture at least 99.9% of the variation in D
+N = length(cumulative_percent_variance_permode (cumulative_percent_variance_permode<99.98))
