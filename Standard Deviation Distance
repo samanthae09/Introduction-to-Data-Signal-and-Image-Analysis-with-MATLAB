@@ -1,0 +1,12 @@
+%% Function 
+function dist = standard_deviation_distance(v,x)  
+m=mean(v)
+d=std(v);
+sd=(x)-(m)
+dist=sd/d;
+end
+
+%% Code to Call the Function
+v = [10 12 14];
+x = 7;
+dist = standard_deviation_distance(v,x) % =-2.5
